@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dvfsem2xrkhdk"]
+
+[ext_resource type="Script" uid="uid://d0yqxq75cpmxp" path="res://scripts/aullido.gd" id="1_pk4rp"]
+[ext_resource type="Texture2D" uid="uid://1f8b8pi8kroq" path="res://assets/aullido/superaullido.png" id="2_bup3v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bup3v"]
+atlas = ExtResource("2_bup3v")
+region = Rect2(0, 0, 575, 1340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2ne2"]
+atlas = ExtResource("2_bup3v")
+region = Rect2(575, 0, 575, 1340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vdls"]
+atlas = ExtResource("2_bup3v")
+region = Rect2(1150, 0, 575, 1340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8wqf"]
+atlas = ExtResource("2_bup3v")
+region = Rect2(1725, 0, 575, 1340)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qb157"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bup3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2ne2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vdls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8wqf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tviyq"]
+radius = 17.0
+
+[node name="Aullido" type="Area2D" unique_id=1309437699]
+script = ExtResource("1_pk4rp")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1396605235]
+position = Vector2(1.0000012, 1.9073486e-06)
+scale = Vector2(0.08695652, 0.049253736)
+sprite_frames = SubResource("SpriteFrames_qb157")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=416315367]
+shape = SubResource("CircleShape2D_tviyq")
