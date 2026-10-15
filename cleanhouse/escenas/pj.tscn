@@ -58,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://bven84nu07tj1" path="res://assets/pj/walk_sur/03.png" id="55_g85gs"]
 [ext_resource type="Texture2D" uid="uid://cswb3sq2l0l5n" path="res://assets/pj/walk_sur/04.png" id="56_07acj"]
 [ext_resource type="Texture2D" uid="uid://6h6o6dlmtpve" path="res://assets/pj/walk_sur/05.png" id="57_8kjph"]
+[ext_resource type="PackedScene" uid="uid://coumhp8ocnfp6" path="res://escenas/hud.tscn" id="59_fol33"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cy4mh"]
 animations = [{
@@ -273,7 +274,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpuhx"]
 size = Vector2(49, 44.5)
 
-[node name="pj" type="CharacterBody2D" unique_id=307298916]
+[node name="pj" type="CharacterBody2D" unique_id=307298916 groups=["jugador"]]
 script = ExtResource("1_dkvj2")
 escena_aullido = ExtResource("2_0mn4i")
 
@@ -285,3 +286,5 @@ animation = &"idle_este"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=264637291]
 shape = SubResource("RectangleShape2D_gpuhx")
+
+[node name="HUD" parent="." unique_id=746513399 instance=ExtResource("59_fol33")]

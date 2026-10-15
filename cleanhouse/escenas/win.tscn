@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b2gq1ubt3574"]
+
+[ext_resource type="Script" uid="uid://di04knlxto7lx" path="res://scripts/win.gd" id="1_6ekve"]
+
+[sub_resource type="SystemFont" id="SystemFont_1qgxs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ekve"]
+font = SubResource("SystemFont_1qgxs")
+font_size = 22
+
+[node name="Win" type="Control" unique_id=473029466]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ekve")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1961351598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2290788, 0.58720815, 0.34220454, 1)
+
+[node name="Label" type="Label" parent="." unique_id=982943432]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.5
+offset_right = 87.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "ganaste sos muy crack"
+label_settings = SubResource("LabelSettings_6ekve")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=288623907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotonReiniciar" type="Button" parent="VBoxContainer" unique_id=1058237115]
+layout_mode = 2
+text = "REINICIAR"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer" unique_id=144682971]
+layout_mode = 2
+text = "TE PODES IR LIBRE"
+
+[connection signal="pressed" from="VBoxContainer/BotonReiniciar" to="." method="_on_boton_reiniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]

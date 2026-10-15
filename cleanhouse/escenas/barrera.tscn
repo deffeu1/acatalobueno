@@ -4,16 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://bnadduldly15s" path="res://assets/barrera/barrera.png" id="2_hqoj4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir3yb"]
-size = Vector2(20, 24)
+size = Vector2(41, 42)
 
 [node name="barrera" type="StaticBody2D" unique_id=1593909643]
 script = ExtResource("1_wj3wc")
+vida_maxima = 75
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1998751127]
-position = Vector2(1.1920929e-07, -1.0000001)
-scale = Vector2(0.10158731, 0.095000006)
+position = Vector2(11.000001, 8.0625)
+scale = Vector2(0.17142859, 0.1675)
 texture = ExtResource("2_hqoj4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=918929722]
-position = Vector2(0, -1)
+position = Vector2(10.5, 8)
 shape = SubResource("RectangleShape2D_ir3yb")
