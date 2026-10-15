@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cd7teapksm7ny"]
+
+[ext_resource type="Script" uid="uid://bc1c1x00sboo3" path="res://scripts/enemigo.gd" id="1_uhebs"]
+[ext_resource type="Texture2D" uid="uid://b0b0m5fe7lb4l" path="res://assets/enemigo/00.png" id="2_743j8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhebs"]
+size = Vector2(33, 43)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7635"]
+radius = 47.0
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=1616759755 groups=["enemigo"]]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_uhebs")
+vida_maxima = 75
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169109886]
+position = Vector2(9.536743e-07, -0.99999905)
+scale = Vector2(1.1607144, 1.077381)
+texture = ExtResource("2_743j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336743041]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_uhebs")
+
+[node name="AreaDano" type="Area2D" parent="." unique_id=1364149899]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=1533140231]
+shape = SubResource("CircleShape2D_y7635")
+
+[connection signal="body_entered" from="AreaDano" to="." method="_on_area_dano_body_entered"]
+[connection signal="body_exited" from="AreaDano" to="." method="_on_area_dano_body_exited"]

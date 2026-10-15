@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://35seh055ob5n"]
 
+[ext_resource type="PackedScene" uid="uid://c1r7x6oso77yd" path="res://escenas/pj.tscn" id="1_81aac"]
+[ext_resource type="Script" uid="uid://cctr4jhjc5qcy" path="res://scripts/main_2.gd" id="1_dmwvj"]
+[ext_resource type="PackedScene" uid="uid://c85bso06cfe1h" path="res://escenas/barrera.tscn" id="2_87u2l"]
+[ext_resource type="PackedScene" uid="uid://cd7teapksm7ny" path="res://escenas/enemigo.tscn" id="3_x04u2"]
+[ext_resource type="PackedScene" uid="uid://dvyr2uikwujjf" path="res://escenas/curacion.tscn" id="4_s08u1"]
+
 [node name="main2" type="Node2D" unique_id=422268444]
+script = ExtResource("1_dmwvj")
+
+[node name="pj" parent="." unique_id=307298916 instance=ExtResource("1_81aac")]
+position = Vector2(530, 341)
+
+[node name="barrera" parent="." unique_id=1593909643 instance=ExtResource("2_87u2l")]
+position = Vector2(884, 233)
+
+[node name="Enemigo" parent="." unique_id=1616759755 instance=ExtResource("3_x04u2")]
+
+[node name="curacion" parent="." unique_id=65769504 instance=ExtResource("4_s08u1")]
+position = Vector2(166, 451)

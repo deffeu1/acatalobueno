@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="cleanhouse"
-run/main_scene="uid://c1r7x6oso77yd"
+run/main_scene="uid://35seh055ob5n"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
