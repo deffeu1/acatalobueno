@@ -288,3 +288,6 @@ animation = &"idle_este"
 shape = SubResource("RectangleShape2D_gpuhx")
 
 [node name="HUD" parent="." unique_id=746513399 instance=ExtResource("59_fol33")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=114452802]
+position_smoothing_speed = 3.0

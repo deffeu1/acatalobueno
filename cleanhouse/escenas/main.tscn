@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dj5v5vff0jg65"]
 
 [ext_resource type="Texture2D" uid="uid://gsel63fmarap" path="res://assets/tilemap/32x32_DEMO.png" id="1_d7u15"]
+[ext_resource type="PackedScene" uid="uid://c1r7x6oso77yd" path="res://escenas/pj.tscn" id="2_0kxa1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7u15"]
 texture = ExtResource("1_d7u15")
@@ -1629,3 +1630,6 @@ tile_set = SubResource("TileSet_jumxm")
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayers" unique_id=2047363417]
 tile_set = SubResource("TileSet_26pgj")
 occlusion_enabled = false
+
+[node name="pj" parent="TileMapLayers" unique_id=307298916 instance=ExtResource("2_0kxa1")]
+position = Vector2(2952, 1767)
