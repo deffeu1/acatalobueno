@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvyr2uikwujjf"]
 
-[ext_resource type="Script" uid="uid://dg835sre3clhi" path="res://curacion.gd" id="1_q4fmx"]
+[ext_resource type="Script" uid="uid://dg835sre3clhi" path="res://scripts/curacion.gd" id="1_q4fmx"]
 [ext_resource type="Texture2D" uid="uid://bmc52u28jncnh" path="res://assets/curacion/images-Photoroom.png" id="2_3t8kv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqn4k"]
