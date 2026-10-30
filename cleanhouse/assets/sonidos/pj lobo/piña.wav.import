@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chgn1kfndtwvt"
+path="res://.godot/imported/piña.wav-f8aea03edce0e31f23dfd2c653b48ba2.sample"
+
+[deps]
+
+source_file="res://assets/sonidos/pj lobo/piña.wav"
+dest_files=["res://.godot/imported/piña.wav-f8aea03edce0e31f23dfd2c653b48ba2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

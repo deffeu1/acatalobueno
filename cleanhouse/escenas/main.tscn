@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cd7teapksm7ny" path="res://escenas/enemigo.tscn" id="4_26pgj"]
 [ext_resource type="PackedScene" uid="uid://s8o8y0kvyktd" path="res://escenas/lobo_rescatable.tscn" id="5_dkga6"]
 [ext_resource type="PackedScene" uid="uid://bivpsufj2qpr6" path="res://escenas/zona_meta.tscn" id="7_o8odp"]
+[ext_resource type="PackedScene" uid="uid://dvyr2uikwujjf" path="res://escenas/curacion.tscn" id="8_68mvh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eqdig"]
 load_path = "res://.godot/imported/32x32_DEMO.png-3a9b43e2e55cfc4709ac269e0778db49.ctex"
@@ -3735,3 +3736,6 @@ position = Vector2(2940, 1817)
 
 [node name="ZonaMeta" parent="." unique_id=703391201 instance=ExtResource("7_o8odp")]
 position = Vector2(4577, 2722)
+
+[node name="curacion" parent="." unique_id=65769504 instance=ExtResource("8_68mvh")]
+position = Vector2(2416, 1787)
