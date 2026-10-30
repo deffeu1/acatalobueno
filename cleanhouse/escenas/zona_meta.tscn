@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bivpsufj2qpr6"]
 
-[ext_resource type="Script" uid="uid://ccgbvr70aeudr" path="res://zona_meta.gd" id="1_a78km"]
+[ext_resource type="Script" uid="uid://ccgbvr70aeudr" path="res://scripts/zona_meta.gd" id="1_a78km"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_delyu"]
 size = Vector2(582, 345)
