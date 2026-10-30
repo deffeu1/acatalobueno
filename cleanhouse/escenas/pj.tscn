@@ -291,3 +291,11 @@ shape = SubResource("RectangleShape2D_gpuhx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=114452802]
 position_smoothing_speed = 3.0
+
+[node name="AudioAullido" type="AudioStreamPlayer2D" parent="." unique_id=1498151769]
+
+[node name="AudioDano" type="AudioStreamPlayer2D" parent="." unique_id=540745121]
+
+[node name="AudioCuracion" type="AudioStreamPlayer2D" parent="." unique_id=1250396279]
+
+[node name="AudioCaminata" type="AudioStreamPlayer2D" parent="." unique_id=1704116856]

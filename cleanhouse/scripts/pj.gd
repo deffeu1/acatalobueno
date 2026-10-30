@@ -9,6 +9,9 @@ var ultima_direccion: String = "sur"
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hud: CanvasLayer = $HUD
 @export var escena_aullido: PackedScene
+@onready var audio_aullido: AudioStreamPlayer2D = $AudioAullido
+@onready var audio_dano: AudioStreamPlayer2D = $AudioDano
+@onready var audio_curacion: AudioStreamPlayer2D = $AudioCuracion
 
 func _ready() -> void:
 	vida_actual = vida_maxima
@@ -71,6 +74,8 @@ func ajustar_colision_frente() -> void:
 		colision.position = Vector2(20, 20)
 
 func recibir_dano(cantidad: int) -> void:
+	if audio_dano and audio_dano.stream:
+		audio_dano.play()
 	vida_actual -= cantidad
 	if hud:
 		hud.actualizar_vida(vida_actual, vida_maxima)
@@ -80,9 +85,10 @@ func recibir_dano(cantidad: int) -> void:
 
 func curar(cantidad: int) -> bool:
 	if vida_actual >= vida_maxima:
-		return false 
-		
+		return false
 	vida_actual = min(vida_actual + cantidad, vida_maxima)
+	if audio_curacion and audio_curacion.stream:
+		audio_curacion.play()
 	if hud:
 		hud.actualizar_vida(vida_actual, vida_maxima)
 	return true
@@ -92,6 +98,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		aullar()
 
 func aullar() -> void:
+	if audio_aullido and audio_aullido.stream:
+		audio_aullido.play()
 	if escena_aullido:
 		var nuevo_aullido = escena_aullido.instantiate()
 		nuevo_aullido.global_position = global_position
