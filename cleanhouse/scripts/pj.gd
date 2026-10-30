@@ -161,6 +161,9 @@ func activar_vista_ampliada() -> void:
 	var timer_duracion = get_tree().create_timer(tiempo_vista_ampliada)
 	await timer_duracion.timeout
 	
+	if not is_inside_tree():
+		return
+		
 	desactivar_vista_ampliada()
 	
 	if hud and hud.has_method("iniciar_cooldown_q"):
@@ -168,15 +171,19 @@ func activar_vista_ampliada() -> void:
 	
 	var tiempo_restante: float = tiempo_cooldown
 	while tiempo_restante > 0.0:
-		await get_tree().process_frame
+		var tree = get_tree()
+		if not tree or not is_inside_tree():
+			return
+			
+		await tree.process_frame
 		tiempo_restante -= get_process_delta_time()
+		
 		if hud and hud.has_method("actualizar_cooldown_q"):
 			hud.actualizar_cooldown_q(tiempo_restante, tiempo_cooldown)
 			
 	puede_usar_vista = true
 	if hud and hud.has_method("establecer_q_lista"):
 		hud.establecer_q_lista()
-
 func desactivar_vista_ampliada() -> void:
 	if not camara:
 		return
