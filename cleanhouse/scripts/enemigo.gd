@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var vida_maxima: int = 50
 @export var dano_ataque: int = 20
 @export var tiempo_entre_ataques: float = 1.0
+@onready var audio_dano_recibido: AudioStreamPlayer2D = $AudioDanoRecibido
 
 var vida_actual: int
 var jugador_detectado: CharacterBody2D = null
@@ -49,8 +50,23 @@ func _on_area_dano_body_exited(body: Node2D) -> void:
 
 func recibir_dano(cantidad: int) -> void:
 	vida_actual -= cantidad
+	if audio_dano_recibido and audio_dano_recibido.stream:
+		audio_dano_recibido.play()
 	modulate = Color(1, 0.2, 0.2)
 	var timer = get_tree().create_timer(0.1)
 	timer.timeout.connect(func(): modulate = Color(1, 1, 1))
 	if vida_actual <= 0:
 		call_deferred("queue_free")
+
+func morir() -> void:
+	set_physics_process(false)
+	$CollisionShape2D.call_deferred("set_disabled", true)
+	if has_node("AnimatedSprite2D"):
+		$AnimatedSprite2D.visible = false
+	elif has_node("Sprite2D"):
+		$Sprite2D.visible = false
+		
+	if audio_dano_recibido and audio_dano_recibido.playing:
+		await audio_dano_recibido.finished
+		
+	call_deferred("queue_free")

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cd7teapksm7ny"]
+[gd_scene format=4 uid="uid://cd7teapksm7ny"]
 
 [ext_resource type="Script" uid="uid://bc1c1x00sboo3" path="res://scripts/enemigo.gd" id="1_uhebs"]
 [ext_resource type="Texture2D" uid="uid://b0b0m5fe7lb4l" path="res://assets/enemigo/00.png" id="2_743j8"]
@@ -7,10 +7,21 @@
 size = Vector2(33, 43)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7635"]
-radius = 34.0147
+radius = 49.010204
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uhebs"]
 radius = 275.04544
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_uhebs"]
+data = PackedByteArray("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")
+format = 3
+stereo = true
+tags = {
+"artist": "MetallicDoom16",
+"comment": "Brought to you by flashkit.com",
+"encoder": "Lavf58.76.100",
+"title": "Hit Marker"
+}
 
 [node name="Enemigo" type="CharacterBody2D" unique_id=1616759755 groups=["enemigo"]]
 collision_layer = 5
@@ -18,8 +29,8 @@ script = ExtResource("1_uhebs")
 vida_maxima = 75
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169109886]
-position = Vector2(9.536743e-07, -0.99999905)
-scale = Vector2(1.1607144, 1.077381)
+position = Vector2(0, -4)
+scale = Vector2(1.4136906, 1.3005952)
 texture = ExtResource("2_743j8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=336743041]
@@ -35,6 +46,10 @@ shape = SubResource("CircleShape2D_y7635")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion" unique_id=930592876]
 shape = SubResource("CircleShape2D_uhebs")
+
+[node name="AudioDanoRecibido" type="AudioStreamPlayer2D" parent="." unique_id=367770896]
+stream = SubResource("AudioStreamWAV_uhebs")
+volume_db = -5.045
 
 [connection signal="body_entered" from="AreaDano" to="." method="_on_area_dano_body_entered"]
 [connection signal="body_exited" from="AreaDano" to="." method="_on_area_dano_body_exited"]

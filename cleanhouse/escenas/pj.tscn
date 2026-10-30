@@ -305,12 +305,16 @@ position_smoothing_speed = 3.0
 
 [node name="AudioAullido" type="AudioStreamPlayer2D" parent="." unique_id=1498151769]
 stream = ExtResource("60_iu0r5")
+bus = &"sfx"
 
 [node name="AudioDano" type="AudioStreamPlayer2D" parent="." unique_id=540745121]
 stream = SubResource("AudioStreamWAV_4rtgo")
 volume_db = -19.189
+bus = &"sfx"
 
 [node name="AudioCuracion" type="AudioStreamPlayer2D" parent="." unique_id=1250396279]
 stream = ExtResource("61_4rtgo")
+bus = &"sfx"
 
 [node name="AudioPasos" type="AudioStreamPlayer2D" parent="." unique_id=1704116856]
+bus = &"sfx"

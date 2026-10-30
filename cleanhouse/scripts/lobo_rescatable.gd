@@ -1,18 +1,19 @@
 extends CharacterBody2D
 
 @export var velocidad: float = 140.0
-@export var distancia_seguimiento: float = 35.0
+@export var distancia_seguimiento: float = 60.0
+@onready var audio_rescate: AudioStreamPlayer2D = $AudioRescate
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var colision: CollisionShape2D = $CollisionShape2D
 
 var rescatado: bool = false
 var en_refugio: bool = false
 var objetivo_seguimiento: Node2D = null
 var ultima_direccion: String = "sur"
-
 var direccion_patrulla: Vector2 = Vector2.ZERO
 var timer_patrulla: float = 0.0
 
-@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var colision: CollisionShape2D = $CollisionShape2D
+
 
 func _ready() -> void:
 	add_to_group("lobo_rescatado") 
@@ -51,6 +52,8 @@ func llegar_al_refugio() -> void:
 	en_refugio = true
 	rescatado = false
 	objetivo_seguimiento = null
+	if audio_rescate and audio_rescate.stream:
+		audio_rescate.play()
 
 func actualizar_animacion(dir: Vector2) -> void:
 	if not anim:
@@ -105,14 +108,16 @@ func ajustar_colision_frente() -> void:
 
 func _on_area_rescate_body_entered(body: Node2D) -> void:
 	if not rescatado and not en_refugio and body.is_in_group("jugador"):
-
 		if jugador_ya_tiene_companero():
 			print("El jugador ya lleva un lobo. Deja a ese en el refugio primero.")
 			return
-
 		rescatado = true
 		objetivo_seguimiento = body
+		if audio_rescate and audio_rescate.stream:
+			audio_rescate.play()
 		print("¡Lobo rescatado! Siguiendo al jugador.")
+
+
 
 func jugador_ya_tiene_companero() -> bool:
 	var lobos = get_tree().get_nodes_in_group("lobo_rescatado")

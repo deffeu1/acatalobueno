@@ -2,7 +2,6 @@ extends Area2D
 
 @export var cantidad_curacion: int = 25
 @export var tiempo_entre_brillos: float = 2.0
-
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:

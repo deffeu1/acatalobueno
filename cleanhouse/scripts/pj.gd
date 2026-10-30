@@ -2,9 +2,6 @@ extends CharacterBody2D
 
 @export var velocidad: float = 160.0
 @export var vida_maxima: int = 150
-var vida_actual: int
-var ultima_direccion: String = "sur"
-
 @onready var colision: CollisionShape2D = $CollisionShape2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hud: CanvasLayer = $HUD
@@ -12,6 +9,9 @@ var ultima_direccion: String = "sur"
 @onready var audio_aullido: AudioStreamPlayer2D = $AudioAullido
 @onready var audio_dano: AudioStreamPlayer2D = $AudioDano
 @onready var audio_curacion: AudioStreamPlayer2D = $AudioCuracion
+
+var vida_actual: int
+var ultima_direccion: String = "sur"
 
 func _ready() -> void:
 	vida_actual = vida_maxima
