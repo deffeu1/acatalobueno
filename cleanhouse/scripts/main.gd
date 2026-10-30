@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var jugador: CharacterBody2D = $pj
+@onready var jugador: CharacterBody2D = $"cosas del mapa/pj"
 @onready var mapa: TileMapLayer = $"cosas del mapa/piso"   
 
 func _ready() -> void:
