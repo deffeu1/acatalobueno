@@ -13,8 +13,6 @@ var ultima_direccion: String = "sur"
 var direccion_patrulla: Vector2 = Vector2.ZERO
 var timer_patrulla: float = 0.0
 
-
-
 func _ready() -> void:
 	add_to_group("lobo_rescatado") 
 
@@ -109,15 +107,11 @@ func ajustar_colision_frente() -> void:
 func _on_area_rescate_body_entered(body: Node2D) -> void:
 	if not rescatado and not en_refugio and body.is_in_group("jugador"):
 		if jugador_ya_tiene_companero():
-			print("El jugador ya lleva un lobo. Deja a ese en el refugio primero.")
 			return
 		rescatado = true
 		objetivo_seguimiento = body
 		if audio_rescate and audio_rescate.stream:
 			audio_rescate.play()
-		print("¡Lobo rescatado! Siguiendo al jugador.")
-
-
 
 func jugador_ya_tiene_companero() -> bool:
 	var lobos = get_tree().get_nodes_in_group("lobo_rescatado")

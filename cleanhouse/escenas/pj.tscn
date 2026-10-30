@@ -58,7 +58,6 @@
 [ext_resource type="Texture2D" uid="uid://bven84nu07tj1" path="res://assets/pj/walk_sur/03.png" id="55_g85gs"]
 [ext_resource type="Texture2D" uid="uid://cswb3sq2l0l5n" path="res://assets/pj/walk_sur/04.png" id="56_07acj"]
 [ext_resource type="Texture2D" uid="uid://6h6o6dlmtpve" path="res://assets/pj/walk_sur/05.png" id="57_8kjph"]
-[ext_resource type="PackedScene" uid="uid://coumhp8ocnfp6" path="res://escenas/hud.tscn" id="59_fol33"]
 [ext_resource type="AudioStream" uid="uid://b47si7d5ywcka" path="res://assets/sonidos/pj lobo/ataque.wav" id="60_iu0r5"]
 [ext_resource type="AudioStream" uid="uid://cootwixodx2e5" path="res://assets/sonidos/pj lobo/curacion (mp3cut.net).wav" id="61_4rtgo"]
 
@@ -297,8 +296,6 @@ animation = &"idle_este"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=264637291]
 shape = SubResource("RectangleShape2D_gpuhx")
-
-[node name="HUD" parent="." unique_id=746513399 instance=ExtResource("59_fol33")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=114452802]
 position_smoothing_speed = 3.0
