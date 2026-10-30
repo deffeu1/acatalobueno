@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0uwa6quq65ec"]
 
 [ext_resource type="Script" uid="uid://t4qtubd33lgf" path="res://scripts/menu_principal.gd" id="1_arcut"]
-[ext_resource type="Texture2D" uid="uid://bq4k2f83x4ggo" path="res://assets/portadas/menu/loboportada.jpg" id="2_qf1q6"]
+[ext_resource type="VideoStream" uid="uid://d1ffxtkflfmab" path="res://assets/portadas/menu/menuvideo.ogv" id="2_arcut"]
 
 [node name="MenuPrincipal" type="Control" unique_id=972191108]
 layout_mode = 3
@@ -12,31 +12,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_arcut")
 
-[node name="ColorRect" type="TextureRect" parent="." unique_id=668381895]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -5.0
-offset_right = 9.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_qf1q6")
-expand_mode = 1
-
-[node name="Button" type="Button" parent="." unique_id=1421911157]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1003662461]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.437
-anchor_top = 0.546
-anchor_right = 0.541
-anchor_bottom = 0.63100004
-offset_left = -0.42401123
-offset_top = 0.19198608
-offset_right = -0.23199463
-offset_bottom = 0.111968994
-text = "JUGAR"
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+stream = ExtResource("2_arcut")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Button" type="Button" parent="." unique_id=1421911157]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.372
+anchor_top = 0.75200003
+anchor_right = 0.62100005
+anchor_bottom = 0.84300005
+offset_left = -2.5440063
+offset_top = -0.2960205
+offset_right = -0.39208984
+offset_bottom = -0.2640381
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

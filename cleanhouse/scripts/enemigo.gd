@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var velocidad: float = 80.0
+@export var velocidad: float = 95.0
 @export var vida_maxima: int = 50
 @export var dano_ataque: int = 15
 @export var tiempo_entre_ataques: float = 1.5
-@export var distancia_frenado: float = 30.0
+@export var distancia_frenado: float = 40.0
 
 @onready var audio_dano_recibido: AudioStreamPlayer2D = $AudioDanoRecibido
 @onready var anim = get_node_or_null("AnimatedSprite2D") if has_node("AnimatedSprite2D") else get_node_or_null("Sprite2D")
