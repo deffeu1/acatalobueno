@@ -278,7 +278,7 @@ size = Vector2(49, 44.5)
 script = ExtResource("1_dkvj2")
 escena_aullido = ExtResource("2_0mn4i")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=351540714]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=351540714 groups=["jugador"]]
 position = Vector2(20, 16.999996)
 scale = Vector2(1.4761904, 1.4047618)
 sprite_frames = SubResource("SpriteFrames_cy4mh")

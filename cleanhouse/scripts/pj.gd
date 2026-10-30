@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var velocidad: float = 150.0
+@export var velocidad: float = 160.0
 @export var vida_maxima: int = 150
 var vida_actual: int
 var ultima_direccion: String = "sur"

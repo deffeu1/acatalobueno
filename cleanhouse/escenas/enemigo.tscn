@@ -9,6 +9,9 @@ size = Vector2(33, 43)
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7635"]
 radius = 34.0147
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhebs"]
+radius = 275.04544
+
 [node name="Enemigo" type="CharacterBody2D" unique_id=1616759755 groups=["enemigo"]]
 collision_layer = 5
 script = ExtResource("1_uhebs")
@@ -28,5 +31,12 @@ shape = SubResource("RectangleShape2D_uhebs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDano" unique_id=1533140231]
 shape = SubResource("CircleShape2D_y7635")
 
+[node name="AreaDeteccion" type="Area2D" parent="." unique_id=145634841]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion" unique_id=930592876]
+shape = SubResource("CircleShape2D_uhebs")
+
 [connection signal="body_entered" from="AreaDano" to="." method="_on_area_dano_body_entered"]
 [connection signal="body_exited" from="AreaDano" to="." method="_on_area_dano_body_exited"]
+[connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
+[connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]
